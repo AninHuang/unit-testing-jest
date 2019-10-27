@@ -17,10 +17,17 @@ test('Should be falsy', () => {
   expect(functions.checkValue(0)).toBeFalsy();
 });
 
-// Will be fail here because toBe is for primitive type
+// Using toBe will be fail here because toBe is for primitive type
 test('User should be Anin Huang object', () => {
-  expect(functions.createUser()).toBe({ 
+  expect(functions.createUser()).toEqual({ 
     firstName: 'Anin', 
     lastName: 'Huang' 
   });
+});
+
+test('Should be under 1600', () => {
+  const load1 = 800;
+  const load2 = 700;
+
+  expect(load1 + load2).toBeLessThanOrEqual(1600);
 });
